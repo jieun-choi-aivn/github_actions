@@ -1,0 +1,17 @@
+name: Run Test
+
+on: 
+  push:
+    branches:
+      - main
+      
+jobs: 
+  build:
+    runs-on: macos-latest
+
+    steps:
+     - uses: actions/checkout@v4
+     - name: Start xcode build
+       run: |
+         xcodebuild clean test -project github_actions/GitHub-Actions-Test.xcodeproj -scheme github_actions -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
+       
