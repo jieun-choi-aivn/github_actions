@@ -10,8 +10,10 @@ jobs:
     runs-on: macos-latest
 
     steps:
-     - uses: actions/checkout@v4
+     - uses: actions/checkout@v3
      - name: Start xcode build
        run: |
-         xcodebuild clean test -project github_actions/GitHub-Actions-Test.xcodeproj -scheme GitHub-Actions-Test -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'
-       
+         xcodebuild clean test \
+           -project github_actions/GitHub-Actions-Test.xcodeproj \
+           -scheme GitHub-Actions-Test \
+           -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
