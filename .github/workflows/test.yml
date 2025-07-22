@@ -14,6 +14,6 @@ jobs:
      - name: Start xcode build
        run: |
          xcodebuild clean test \
-           -project github_actions/GitHub-Actions-Test.xcodeproj \
+           -project GitHub-Actions-Test.xcodeproj \
            -scheme GitHub-Actions-Test \
            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
